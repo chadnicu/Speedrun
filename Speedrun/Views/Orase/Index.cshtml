@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Speedrun.Models.Oras>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumarulLocuitori)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tara)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumarulLocuitori)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tara.Denumire)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodOras">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodOras">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodOras">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

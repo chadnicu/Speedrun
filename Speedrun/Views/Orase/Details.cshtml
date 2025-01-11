@@ -1,0 +1,36 @@
+﻿@model Speedrun.Models.Oras
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Oras</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Denumire)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Denumire)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumarulLocuitori)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumarulLocuitori)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tara)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tara.Continent)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.CodOras">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

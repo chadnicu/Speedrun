@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Speedrun.Models.Oras>
+
+<h1>Orase cu peste 1 milion de locuitori</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumarulLocuitori)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tara)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Denumire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumarulLocuitori)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tara.Denumire)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

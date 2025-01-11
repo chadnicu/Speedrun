@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Speedrun.Models.Tara>
+
+@{
+    var continente = ViewBag.Continente;
+}
+
+
+<h1>Tari dupa continent</h1>
+
+<form asp-action="DupaContinent" asp-controller="Tari" method="get"> 
+    <select name="continent">
+        @foreach(var continent in @continente) {
+            <option value="@continent">@continent</option>
+        }
+    </select>
+    <input type="submit"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Continent)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Denumire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Continent)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

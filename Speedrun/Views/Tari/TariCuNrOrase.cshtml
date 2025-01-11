@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Speedrun.Models.Tara>
+
+<h1>Tari cu nr orase</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Continent)
+            </th>
+            <th>
+                Nr Orase
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Denumire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Continent)
+                </td>
+                <td>
+                    @item?.Orase?.Count()
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
